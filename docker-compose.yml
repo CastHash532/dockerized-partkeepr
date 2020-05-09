@@ -16,13 +16,20 @@ services:
 
   partkeepr:
     build:
-      context: ./partkeepr
+      context: ./app
     ports:
       - "${APP_PORT}:80"
     restart: always
     volumes:
-      - "pk-dir:/var/www/partkeepr"
+      - "./PartKeepr:/var/www/partkeepr"
+
+  composer:
+    build:
+      context: ./composer
+    command: ["composer" ,"install"]
+    volumes:
+      - "./PartKeepr:/home/application"
+
 
 volumes:
   pk-db:
-  pk-dir:

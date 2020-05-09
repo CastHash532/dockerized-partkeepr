@@ -12,12 +12,6 @@ RUN apk add nginx
 # Create www-data user
 RUN adduser www-data -H -D -G www-data
 
-# Copy Application
-RUN wget https://downloads.partkeepr.org/partkeepr-1.4.0.zip && \
-    unzip -qq partkeepr-1.4.0.zip -d /var/www/ && \
-    rm -f partkeepr-1.4.0.zip
-RUN mv /var/www/partkeepr-1.4.0 /var/www/partkeepr
-RUN chown -R www-data:www-data /var/www
 
 # NGINX Configuration
 RUN chown -R www-data:www-data /var/lib/nginx
