@@ -14,7 +14,7 @@ services:
     volumes:
        - pk-db:/var/lib/mysql
 
-  partkeepr:
+  app:
     build:
       context: ./app
     ports:
@@ -26,9 +26,17 @@ services:
   composer:
     build:
       context: ./composer
-    command: ["composer" ,"install"]
     volumes:
       - "./PartKeepr:/home/application"
+
+  vscode:
+    image: codercom/code-server
+    ports:
+      - "8081:8080"
+    environment:
+      - PASSWORD:pass
+    volumes:
+      - "./PartKeepr:/home/coder/workspace"
 
 
 volumes:
