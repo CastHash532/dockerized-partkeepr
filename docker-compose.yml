@@ -13,7 +13,9 @@ services:
     restart: always
     volumes:
        - pk-db:/var/lib/mysql
-
+    networks:
+       - net
+      
   app:
     build:
       context: ./app
@@ -22,6 +24,8 @@ services:
     restart: always
     volumes:
       - "./PartKeepr:/var/www/partkeepr"
+    networks:
+      - net
 
   composer:
     build:
@@ -41,3 +45,7 @@ services:
 
 volumes:
   pk-db:
+
+networks:
+    net:
+        driver: bridge
