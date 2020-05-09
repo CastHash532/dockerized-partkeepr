@@ -9,4 +9,8 @@ Installation:
 1. clone repo
 2. run `./init.sh`
 3. go to *`http://{host}:8080/setup/`* and follow the setup instructions
+   hostname: *`dockerized-partkeepr_mysql_1`*
+   database: *`partkeepr`*
+   username: *`root`*
+   password: *`root`*
 3. Vs code instance on *`http://{host}:8081`* 
