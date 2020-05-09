@@ -8,6 +8,6 @@ It meets the following specs:
 
 Installation:
 1. clone repo
-2. update .env variables
-3. run `docker-compose up -d`
-4. go to *`http://{host}:{port}/setup/`* and follow the setup instructions
+2. run `docker-compose up -d`
+3. go to *`http://{host}:8080/setup/`* and follow the setup instructions
+3. Vs code instance on *`http://{host}:8081`* 
